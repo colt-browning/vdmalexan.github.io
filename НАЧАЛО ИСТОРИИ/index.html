@@ -50,6 +50,7 @@
         .then((files) => {
           files
             .filter((f) => f.type === "file")
+            .filter(file => file.name.endsWith('.txt'))
             .sort((a, b) => a.name.localeCompare(b.name, "ru", { numeric: true }))
             .forEach((file) => {
               const li = document.createElement("li");
@@ -71,7 +72,5 @@
         });
     })();
   </script>
-
-  <p style="margin-top: 2rem; font-size: 0.9rem;">Страница формируется динамически из содержимого каталога на GitHub. При добавлении/удалении частей обновлять HTML не нужно.</p>
 </body>
 </html>
